@@ -1,0 +1,17 @@
+name: smoke
+benchmark_version: event-intel-v1
+description: Three fast synthetic tasks covering report, abstention, and fail-closed behavior.
+tasks:
+  - event-intel-v1/tasks/normal-complete.json
+  - event-intel-v1/tasks/prompt-injection.json
+  - event-intel-v1/tasks/tool-failure.json
+seeds: [42]
+budgets:
+  wall_time_seconds: 5
+  max_tool_calls: 12
+  max_output_characters: 24000
+acceptance:
+  minimum_quality_delta: 0.005
+  bootstrap_samples: 2000
+  confidence: 0.95
+

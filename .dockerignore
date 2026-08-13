@@ -1,0 +1,15 @@
+.git
+.github
+.venv
+.epic-intel
+artifacts
+dist
+build
+work-*
+docs
+site
+tests
+**/__pycache__
+**/*.pyc
+**/*.pyo
+

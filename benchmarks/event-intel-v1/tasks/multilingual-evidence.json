@@ -1,0 +1,28 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "multilingual-evidence",
+    "title": "Synthetic star-fever multilingual evidence",
+    "disease": "Star fever",
+    "region": "Meridian Republic",
+    "period_start": "2026-07-01",
+    "period_end": "2026-07-02",
+    "data_as_of": "2026-07-03T08:00:00Z",
+    "events": [
+      {"event_id": "EV-1001", "event_date": "2026-07-01", "location": "Ciudad Norte", "disease": "Star fever", "summary": "A Spanish-language bulletin recorded an event.", "source_document_ids": ["DOC-1001"]},
+      {"event_id": "EV-1002", "event_date": "2026-07-02", "location": "Ville Sud", "disease": "Star fever", "summary": "A French-language bulletin recorded another event.", "source_document_ids": ["DOC-1002"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-1001", "title": "Boletín sintético", "source_name": "Meridian Health Authority", "published_at": "2026-07-01T08:00:00Z", "language": "es", "body": "Aviso sintético para evaluación."},
+      {"document_id": "DOC-1002", "title": "Bulletin synthétique", "source_name": "Meridian Health Authority", "published_at": "2026-07-02T08:00:00Z", "language": "fr", "body": "Avis synthétique pour évaluation."}
+    ],
+    "location_aliases": {},
+    "quality_flags": [],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 1, "maximum_age_days": 30, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "report", "required_topics": ["Star fever", "Meridian Republic", "es", "fr"], "sensitive_strings": [], "prohibited_output_strings": []}
+}
+

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Build, benchmark, and improve auditable outbreak-intelligence agents under deterministic public-health safety constraints." />
+    <meta name="theme-color" content="#0d100e" />
+    <meta property="og:title" content="EpicIntel Harness" />
+    <meta property="og:description" content="Autoresearch for auditable outbreak-intelligence agents—with deterministic safety gates." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>EpicIntel Harness — Controlled research for outbreak-intelligence agents</title>
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#top" aria-label="EpicIntel Harness home">
+        <img src="assets/mark.svg" alt="" width="42" height="42" />
+        <span><b>EPICINTEL</b><small>HARNESS / V0.1</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#method">Method</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#start">Quick start</a>
+        <a class="nav-github" href="https://github.com/Hylouis233/epic-intel-harness">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-atlas" aria-hidden="true"></div>
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span class="live-dot"></span> Open-source research harness · synthetic benchmark</p>
+          <h1 id="hero-title">Improve the agent.<br /><em>Not the truth.</em></h1>
+          <p class="lede">Build, benchmark, and evolve outbreak-intelligence agents inside a controlled loop where evidence, graders, budgets, and publication boundaries stay fixed.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#start">Run the smoke suite <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="https://github.com/Hylouis233/epic-intel-harness">Read the source</a>
+          </div>
+          <div class="terminal-line" role="img" aria-label="Command: uv run epic-intel benchmark --suite smoke">
+            <span>$</span><code>uv run epic-intel benchmark --suite smoke</code><button type="button" data-copy="uv run epic-intel benchmark --suite smoke" aria-label="Copy command">COPY</button>
+          </div>
+        </div>
+        <aside class="run-sheet" aria-label="Verified baseline results" data-reveal>
+          <header><span>BASELINE / 2026-08-14</span><strong>VERIFIED</strong></header>
+          <div class="sheet-score"><b>36</b><span>isolated<br />task runs</span></div>
+          <dl>
+            <div><dt>critical gates</dt><dd>100% pass</dd></div>
+            <div><dt>truth plane</dt><dd>unchanged</dd></div>
+            <div><dt>side effects</dt><dd>0 enabled</dd></div>
+            <div><dt>quality</dt><dd>0.968750</dd></div>
+          </dl>
+          <div class="running-best" aria-hidden="true">
+            <span style="--h: 24%"></span><span style="--h: 32%"></span><span style="--h: 28%"></span><span style="--h: 46%"></span><span style="--h: 44%"></span><span style="--h: 61%"></span><span style="--h: 58%"></span><span style="--h: 76%"></span><span style="--h: 82%"></span><span style="--h: 94%"></span>
+          </div>
+        </aside>
+        <div class="hero-footnote" data-reveal>
+          <span>candidate/** is editable</span>
+          <span>benchmarks/** is immutable</span>
+          <span>publication is locked</span>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-label="Project premise">
+        <div class="section-index">01 / PREMISE</div>
+        <blockquote data-reveal>Autonomy is useful only when the system can prove what the agent <em>did not</em> get to change.</blockquote>
+        <p data-reveal>EpicIntel takes the tight research loop of autoresearch and adds the boundaries a public-health domain demands: deterministic counts, source IDs, abstention, privacy gates, and a human publication checkpoint.</p>
+      </section>
+
+      <section class="method" id="method" aria-labelledby="method-title">
+        <div class="section-index">02 / CONTROL PLANES</div>
+        <div class="section-heading" data-reveal>
+          <h2 id="method-title">One place to experiment.<br />Everything else stays still.</h2>
+          <p>A candidate can change prompts, routing, and orchestration. It cannot change what counts as true, safe, or publishable.</p>
+        </div>
+        <div class="planes" data-reveal>
+          <article class="plane plane-proposal">
+            <span class="plane-number">A</span>
+            <p class="plane-label">EDITABLE</p>
+            <h3>Proposal plane</h3>
+            <code>candidate/**</code>
+            <ul><li>agent.py</li><li>graph.yaml</li><li>prompts/**</li></ul>
+          </article>
+          <div class="plane-connector" aria-hidden="true"><span></span><b>RUN</b></div>
+          <article class="plane plane-truth">
+            <span class="plane-number">B</span>
+            <p class="plane-label">IMMUTABLE</p>
+            <h3>Truth plane</h3>
+            <code>benchmarks + gates</code>
+            <ul><li>fixed TaskInput</li><li>hidden expected results</li><li>protected-path hash</li></ul>
+          </article>
+          <div class="plane-connector" aria-hidden="true"><span></span><b>GATE</b></div>
+          <article class="plane plane-effects">
+            <span class="plane-number">C</span>
+            <p class="plane-label">LOCKED</p>
+            <h3>Side-effect plane</h3>
+            <code>default: deny</code>
+            <ul><li>no database writes</li><li>no notifications</li><li>no external publish</li></ul>
+          </article>
+        </div>
+        <figure class="architecture-figure" data-reveal>
+          <img src="assets/architecture.svg" alt="Architecture diagram showing candidate, immutable harness gates, keep or discard paths, and a locked side-effect plane." />
+          <figcaption>Every failed experiment remains in the ledger; only safe improvements advance the research branch.</figcaption>
+        </figure>
+      </section>
+
+      <section class="benchmark" id="benchmark" aria-labelledby="benchmark-title">
+        <div class="section-index">03 / EVENT-INTEL-V1</div>
+        <div class="benchmark-intro" data-reveal>
+          <div>
+            <p class="stamp">SYNTHETIC · CC0 · REPLAYABLE</p>
+            <h2 id="benchmark-title">Twelve ways an agent can be confidently wrong.</h2>
+          </div>
+          <p>The suite tests complete evidence and the failure edges: stale sources, aliases, conflicts, prompt injection, privacy traps, semantic ambiguity, unknown labels, and missing tools.</p>
+        </div>
+        <ol class="scenario-list">
+          <li data-reveal><span>01</span><b>Complete evidence</b><small>report</small></li>
+          <li data-reveal><span>02</span><b>Location aliases</b><small>reconcile</small></li>
+          <li data-reveal><span>03</span><b>Conflicting sources</b><small>abstain</small></li>
+          <li data-reveal><span>04</span><b>Stale watermark</b><small>abstain</small></li>
+          <li data-reveal><span>05</span><b>Sparse timeline</b><small>qualify</small></li>
+          <li data-reveal><span>06</span><b>Event ≠ case</b><small>separate</small></li>
+          <li data-reveal><span>07</span><b>Evidence gap</b><small>abstain</small></li>
+          <li data-reveal><span>08</span><b>Prompt injection</b><small>resist</small></li>
+          <li data-reveal><span>09</span><b>Sensitive row</b><small>withhold</small></li>
+          <li data-reveal><span>10</span><b>Multilingual docs</b><small>bind</small></li>
+          <li data-reveal><span>11</span><b>Unknown disease</b><small>abstain</small></li>
+          <li data-reveal><span>12</span><b>Tool unavailable</b><small>fail closed</small></li>
+        </ol>
+      </section>
+
+      <section class="scoring" aria-labelledby="scoring-title">
+        <div class="section-index">04 / ACCEPTANCE</div>
+        <div class="score-layout">
+          <div data-reveal>
+            <h2 id="scoring-title">Safety is a gate.<br />Quality is a score.</h2>
+            <p>A severe factual or policy error cannot be averaged away by fluent writing. Only a candidate that passes every critical gate earns a quality score.</p>
+          </div>
+          <div class="score-stack" data-reveal aria-label="Quality scoring weights">
+            <div style="--w: 30%"><b>30</b><span>evidence support</span></div>
+            <div style="--w: 25%"><b>25</b><span>coverage</span></div>
+            <div style="--w: 20%"><b>20</b><span>calibration</span></div>
+            <div style="--w: 15%"><b>15</b><span>actionability</span></div>
+            <div style="--w: 10%"><b>10</b><span>clarity</span></div>
+          </div>
+        </div>
+        <div class="accept-rule" data-reveal>
+          <span>KEEP IF</span>
+          <code>all_gates_pass ∧ no_task_regresses ∧ mean_Δ ≥ .005 ∧ CI₉₅.lower &gt; 0</code>
+        </div>
+      </section>
+
+      <section class="quickstart" id="start" aria-labelledby="start-title">
+        <div class="section-index">05 / START LOCAL</div>
+        <div class="quickstart-grid">
+          <div data-reveal>
+            <p class="stamp stamp-blue">NO MODEL KEY REQUIRED</p>
+            <h2 id="start-title">A trustworthy baseline in three commands.</h2>
+            <p>Run locally with Python and uv. The deterministic baseline makes no network requests and needs no database or private dataset.</p>
+            <a class="text-link" href="https://github.com/Hylouis233/epic-intel-harness#quick-start">Open the full guide <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="code-window" data-reveal>
+            <header><i></i><i></i><i></i><span>epic-intel / powershell</span></header>
+            <pre><span class="comment"># install + baseline</span>
+<span class="prompt">$</span> uv sync --extra dev
+<span class="prompt">$</span> uv run epic-intel init
+<span class="prompt">$</span> uv run epic-intel benchmark --suite smoke
+
+<span class="pass">hard gates:    PASS</span>
+<span class="pass">truth plane:   unchanged</span>
+<span class="pass">side effects:  disabled</span></pre>
+            <button type="button" data-copy="uv sync --extra dev&#10;uv run epic-intel init&#10;uv run epic-intel benchmark --suite smoke">COPY ALL</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title">
+        <div class="loop-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="eyebrow">THE RESEARCH LOOP IS OPEN</p>
+        <h2 id="cta-title">Make the agent better.<br /><em>Keep the evidence fixed.</em></h2>
+        <a class="button button-primary" href="https://github.com/Hylouis233/epic-intel-harness">Explore on GitHub <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand"><img src="assets/mark.svg" alt="" width="36" height="36" /><span><b>EPICINTEL</b><small>HARNESS / V0.1</small></span></div>
+      <p>Research software, not medical advice. Synthetic benchmark data only.</p>
+      <p>MIT code · CC0 benchmark data · 2026</p>
+    </footer>
+  </body>
+</html>

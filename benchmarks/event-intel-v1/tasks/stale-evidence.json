@@ -1,0 +1,26 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "stale-evidence",
+    "title": "Synthetic reed-fever stale snapshot",
+    "disease": "Reed fever",
+    "region": "Old Marsh",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-02",
+    "data_as_of": "2026-03-15T08:00:00Z",
+    "events": [
+      {"event_id": "EV-401", "event_date": "2026-01-01", "location": "Marsh Center", "disease": "Reed fever", "summary": "The only available event is old.", "source_document_ids": ["DOC-401"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-401", "title": "Old Marsh archive bulletin", "source_name": "Old Marsh Health Office", "published_at": "2026-01-02T08:00:00Z", "language": "en", "body": "Synthetic archived bulletin."}
+    ],
+    "location_aliases": {},
+    "quality_flags": [],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 1, "maximum_age_days": 14, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "abstain", "required_topics": ["Old Marsh", "freshness window"], "sensitive_strings": [], "prohibited_output_strings": []}
+}
+

@@ -1,0 +1,27 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "event-case-boundary",
+    "title": "Synthetic ember-fever semantic boundary",
+    "disease": "Ember fever",
+    "region": "Copper Valley",
+    "period_start": "2026-07-10",
+    "period_end": "2026-07-11",
+    "data_as_of": "2026-07-12T08:00:00Z",
+    "events": [
+      {"event_id": "EV-601", "event_date": "2026-07-10", "location": "Copper East", "disease": "Ember fever", "summary": "A feed record mentions a cumulative clinical total, but the benchmark contains event records only.", "source_document_ids": ["DOC-601"]},
+      {"event_id": "EV-602", "event_date": "2026-07-11", "location": "Copper West", "disease": "Ember fever", "summary": "A second feed record must not be treated as an affected person.", "source_document_ids": ["DOC-602"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-601", "title": "Copper Valley situation note", "source_name": "Copper Valley Health Office", "published_at": "2026-07-10T08:00:00Z", "language": "en", "body": "Synthetic source with intentionally ambiguous wording."},
+      {"document_id": "DOC-602", "title": "Copper Valley follow-up", "source_name": "Copper Valley Health Office", "published_at": "2026-07-11T08:00:00Z", "language": "en", "body": "Synthetic follow-up."}
+    ],
+    "location_aliases": {},
+    "quality_flags": ["event_case_ambiguity"],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 1, "maximum_age_days": 30, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "report", "required_topics": ["Ember fever", "Copper Valley", "event records", "not affected people"], "sensitive_strings": [], "prohibited_output_strings": []}
+}

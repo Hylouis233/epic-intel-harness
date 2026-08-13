@@ -1,0 +1,15 @@
+version: 1
+nodes:
+  - id: readiness
+    handler: readiness
+  - id: event_analysis
+    handler: event_analysis
+  - id: evidence_retrieval
+    handler: evidence_retrieval
+  - id: report_writer
+    handler: report_writer
+edges:
+  - [readiness, event_analysis]
+  - [event_analysis, evidence_retrieval]
+  - [evidence_retrieval, report_writer]
+

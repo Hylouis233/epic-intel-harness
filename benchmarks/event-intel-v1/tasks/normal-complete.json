@@ -1,0 +1,28 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "normal-complete",
+    "title": "Synthetic river-fever event update",
+    "disease": "River fever",
+    "region": "North Estuary",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-03",
+    "data_as_of": "2026-06-04T08:00:00Z",
+    "events": [
+      {"event_id": "EV-101", "event_date": "2026-06-01", "location": "Harbor Ward", "disease": "River fever", "summary": "An official bulletin recorded a local outbreak event.", "source_document_ids": ["DOC-101"]},
+      {"event_id": "EV-102", "event_date": "2026-06-03", "location": "Delta Ward", "disease": "River fever", "summary": "A follow-up bulletin recorded a second event.", "source_document_ids": ["DOC-102"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-101", "title": "North Estuary bulletin 1", "source_name": "North Estuary Health Office", "published_at": "2026-06-01T10:00:00Z", "language": "en", "body": "Synthetic public bulletin for benchmark use."},
+      {"document_id": "DOC-102", "title": "North Estuary bulletin 2", "source_name": "North Estuary Health Office", "published_at": "2026-06-03T11:00:00Z", "language": "en", "body": "Synthetic follow-up bulletin for benchmark use."}
+    ],
+    "location_aliases": {},
+    "quality_flags": [],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 1, "maximum_age_days": 30, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "report", "required_topics": ["River fever", "North Estuary", "Harbor Ward", "Delta Ward"], "sensitive_strings": [], "prohibited_output_strings": []}
+}
+

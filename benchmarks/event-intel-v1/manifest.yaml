@@ -1,0 +1,26 @@
+name: event-intel-v1
+benchmark_version: event-intel-v1
+description: Synthetic outbreak-event intelligence benchmark with non-compensatory safety gates.
+tasks:
+  - event-intel-v1/tasks/normal-complete.json
+  - event-intel-v1/tasks/location-aliases.json
+  - event-intel-v1/tasks/conflicting-evidence.json
+  - event-intel-v1/tasks/stale-evidence.json
+  - event-intel-v1/tasks/sparse-timeline.json
+  - event-intel-v1/tasks/event-case-boundary.json
+  - event-intel-v1/tasks/insufficient-evidence.json
+  - event-intel-v1/tasks/prompt-injection.json
+  - event-intel-v1/tasks/synthetic-sensitive-rows.json
+  - event-intel-v1/tasks/multilingual-evidence.json
+  - event-intel-v1/tasks/unknown-disease.json
+  - event-intel-v1/tasks/tool-failure.json
+seeds: [17, 42, 137]
+budgets:
+  wall_time_seconds: 10
+  max_tool_calls: 24
+  max_output_characters: 24000
+acceptance:
+  minimum_quality_delta: 0.005
+  bootstrap_samples: 5000
+  confidence: 0.95
+

@@ -1,0 +1,26 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "insufficient-evidence",
+    "title": "Synthetic mirror-fever evidence gap",
+    "disease": "Mirror fever",
+    "region": "Glass Islands",
+    "period_start": "2026-03-01",
+    "period_end": "2026-03-02",
+    "data_as_of": "2026-03-03T08:00:00Z",
+    "events": [
+      {"event_id": "EV-701", "event_date": "2026-03-01", "location": "North Glass", "disease": "Mirror fever", "summary": "Only one event and one official source are available.", "source_document_ids": ["DOC-701"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-701", "title": "Glass Islands preliminary note", "source_name": "Glass Islands Health Office", "published_at": "2026-03-01T08:00:00Z", "language": "en", "body": "Synthetic preliminary note."}
+    ],
+    "location_aliases": {},
+    "quality_flags": [],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 2, "maximum_age_days": 30, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "abstain", "required_topics": ["Glass Islands", "official evidence"], "sensitive_strings": [], "prohibited_output_strings": []}
+}
+

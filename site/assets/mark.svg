@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">EpicIntel Harness mark</title>
+  <desc id="desc">Three evidence lanes crossed by a chartreuse verification path.</desc>
+  <rect width="96" height="96" rx="22" fill="#101311"/>
+  <path d="M17 26h56" stroke="#5ed2ff" stroke-width="11" stroke-linecap="round"/>
+  <path d="M17 48h62" stroke="#f58a3b" stroke-width="11" stroke-linecap="round"/>
+  <path d="M17 70h46" stroke="#5ed2ff" stroke-width="11" stroke-linecap="round"/>
+  <path d="M28 78 63 18" stroke="#c8f04b" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="79" cy="70" r="6" fill="#f4f0e8"/>
+</svg>
+

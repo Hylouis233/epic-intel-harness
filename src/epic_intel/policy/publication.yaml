@@ -1,0 +1,12 @@
+version: 1
+publication:
+  enabled: false
+  requires_human_approval: true
+side_effect_tools:
+  database_write: false
+  notifications: false
+  external_publish: false
+failure_semantics:
+  missing_verifier: failed_configuration
+  risk_assessment_error: unknown
+  machine_review_passed: ready_for_human_review

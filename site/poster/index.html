@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EpicIntel Harness poster</title>
+    <style>
+      :root { --acid:#c8f04b; --cyan:#5ed2ff; --orange:#f58a3b; --paper:#f1ede4; --ink:#0d100e; }
+      * { box-sizing:border-box; }
+      html,body { width:100%; height:100%; margin:0; overflow:hidden; background:var(--ink); }
+      body { color:var(--paper); font-family:'Arial Narrow','Aptos Narrow',sans-serif; }
+      .poster { position:relative; width:100vw; height:52.5vw; min-height:100vh; isolation:isolate; overflow:hidden; background:#0d100e; }
+      .atlas { position:absolute; inset:0; z-index:-3; background:linear-gradient(90deg,#0d100e 0%,rgba(13,16,14,.96) 33%,rgba(13,16,14,.26) 70%,rgba(13,16,14,.48) 100%),url('../assets/hero-atlas.webp') center/cover no-repeat; }
+      .grid { position:absolute; inset:0; z-index:-2; opacity:.45; background:repeating-linear-gradient(90deg,transparent 0 calc(8.333% - 1px),rgba(255,255,255,.07) calc(8.333% - 1px) 8.333%),repeating-linear-gradient(0deg,transparent 0 calc(16.666% - 1px),rgba(255,255,255,.045) calc(16.666% - 1px) 16.666%); }
+      .edge { position:absolute; inset:2.9vw; border:1px solid rgba(241,237,228,.25); pointer-events:none; }
+      header { position:absolute; left:4.4vw; right:4.4vw; top:3.3vw; display:flex; justify-content:space-between; align-items:center; }
+      .brand { display:flex; align-items:center; gap:.8vw; }
+      .brand img { width:2.8vw; height:2.8vw; }
+      .brand span { display:flex; flex-direction:column; }
+      .brand b { font-size:1.05vw; letter-spacing:.08em; }
+      .brand small,.meta { margin-top:.25vw; color:#8d9990; font:.55vw/1.2 'Cascadia Mono',monospace; letter-spacing:.16em; }
+      .meta { margin:0; color:#bdc6c0; }
+      .copy { position:absolute; left:4.4vw; top:12vw; width:52vw; }
+      .eyebrow { margin:0 0 1.8vw; color:#cbd3cd; font:700 .68vw/1 'Cascadia Mono',monospace; letter-spacing:.18em; text-transform:uppercase; }
+      .eyebrow::before { content:'●'; margin-right:.7vw; color:var(--acid); text-shadow:0 0 1vw var(--acid); }
+      h1 { margin:0; font:400 6.7vw/.82 Georgia,serif; letter-spacing:-.06em; }
+      h1 em { color:var(--acid); font-weight:400; }
+      .dek { width:42vw; margin:2.3vw 0 0; color:#c4ccc6; font-size:1.08vw; line-height:1.42; }
+      .command { margin-top:2.4vw; display:inline-flex; align-items:center; gap:.8vw; padding:.9vw 1.15vw; color:#dde4df; background:rgba(8,11,9,.72); border:1px solid rgba(241,237,228,.26); font:.7vw/1 'Cascadia Mono',monospace; }
+      .command b { color:var(--acid); }
+      .sheet { position:absolute; right:5.1vw; top:14.4vw; width:24vw; background:rgba(13,17,14,.9); border:1px solid rgba(200,240,75,.55); box-shadow:1.5vw 1.5vw 0 rgba(0,0,0,.22); }
+      .sheet header { position:static; padding:1vw 1.2vw; border-bottom:1px solid #313a33; color:#8d9990; font:.6vw/1 'Cascadia Mono',monospace; letter-spacing:.12em; }
+      .sheet header strong { color:var(--acid); }
+      .score { display:flex; align-items:flex-end; gap:1.1vw; padding:1.5vw 1.4vw; }
+      .score b { font:400 5.6vw/.72 Georgia,serif; }
+      .score span { color:#929d95; font:.62vw/1.3 'Cascadia Mono',monospace; text-transform:uppercase; }
+      dl { margin:0; padding:0 1.4vw 1.2vw; }
+      dl div { display:flex; justify-content:space-between; padding:.62vw 0; border-top:1px solid #2b332d; }
+      dt,dd { font:.61vw/1 'Cascadia Mono',monospace; }
+      dt { color:#89958c; } dd { margin:0; color:#edf0ed; font-weight:700; text-transform:uppercase; }
+      .bars { height:5vw; padding:.8vw 1.4vw 0; display:flex; align-items:end; gap:.38vw; border-top:1px solid #2b332d; }
+      .bars i { flex:1; height:var(--h); background:var(--acid); opacity:.8; box-shadow:0 0 .8vw rgba(200,240,75,.25); }
+      .legend { position:absolute; left:4.4vw; right:4.4vw; bottom:3.8vw; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(241,237,228,.22); }
+      .legend div { padding:1.1vw 1vw 0 0; font:.59vw/1.3 'Cascadia Mono',monospace; color:#9ba69e; letter-spacing:.08em; text-transform:uppercase; }
+      .legend b { display:block; margin-bottom:.38vw; color:#eef1ee; font-size:.67vw; }
+      .legend div::before { content:''; display:inline-block; width:.55vw; height:.55vw; margin-right:.55vw; border-radius:50%; background:var(--cyan); }
+      .legend div:nth-child(2)::before { background:var(--acid); }
+      .legend div:nth-child(3)::before,.legend div:nth-child(4)::before { background:var(--orange); }
+    </style>
+  </head>
+  <body>
+    <main class="poster" aria-label="EpicIntel Harness poster">
+      <div class="atlas"></div><div class="grid"></div><div class="edge"></div>
+      <header>
+        <div class="brand"><img src="../assets/mark.svg" alt="" /><span><b>EPICINTEL</b><small>HARNESS / V0.1</small></span></div>
+        <p class="meta">AUDITABLE OUTBREAK-INTELLIGENCE AGENTS · OPEN SOURCE</p>
+      </header>
+      <section class="copy">
+        <p class="eyebrow">Controlled research surface</p>
+        <h1>Improve the agent.<br /><em>Not the truth.</em></h1>
+        <p class="dek">Build, benchmark, and evolve outbreak-intelligence agents while evidence, safety gates, budgets, and publication boundaries stay fixed.</p>
+        <div class="command"><b>$</b> uv run epic-intel benchmark --suite smoke</div>
+      </section>
+      <aside class="sheet">
+        <header><span>BASELINE / EVENT-INTEL-V1</span><strong>VERIFIED</strong></header>
+        <div class="score"><b>36</b><span>isolated<br />task runs</span></div>
+        <dl><div><dt>critical gates</dt><dd>100% pass</dd></div><div><dt>truth plane</dt><dd>unchanged</dd></div><div><dt>side effects</dt><dd>0 enabled</dd></div><div><dt>quality</dt><dd>0.968750</dd></div></dl>
+        <div class="bars"><i style="--h:25%"></i><i style="--h:34%"></i><i style="--h:31%"></i><i style="--h:48%"></i><i style="--h:46%"></i><i style="--h:62%"></i><i style="--h:70%"></i><i style="--h:82%"></i><i style="--h:91%"></i></div>
+      </aside>
+      <footer class="legend"><div><b>PROPOSAL</b>candidate/** editable</div><div><b>TRUTH</b>benchmarks immutable</div><div><b>GATES</b>safety before quality</div><div><b>PUBLISH</b>locked by default</div></footer>
+    </main>
+  </body>
+</html>

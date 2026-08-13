@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title desc">
+  <title id="title">EpicIntel Harness architecture</title>
+  <desc id="desc">A coding agent edits the candidate plane. A child-process harness runs fixed inputs. Immutable gates either keep or discard the candidate. Publication remains locked.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#293029" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1 1 10 6 1 11z" fill="#c8f04b"/>
+    </marker>
+  </defs>
+  <rect width="1440" height="720" rx="28" fill="#0d100e"/>
+  <rect width="1440" height="720" rx="28" fill="url(#grid)" opacity=".72"/>
+  <g font-family="Cascadia Mono, monospace">
+    <text x="64" y="72" fill="#7f8d84" font-size="18" letter-spacing="5">CONTROLLED RESEARCH SURFACE / V0.1</text>
+    <text x="64" y="118" fill="#f4f0e8" font-family="Georgia, serif" font-size="34">Proposal, truth, and side effects stay separate.</text>
+    <g transform="translate(64 190)">
+      <rect width="270" height="270" rx="20" fill="#172019" stroke="#c8f04b" stroke-width="2"/>
+      <text x="28" y="42" fill="#c8f04b" font-size="15" letter-spacing="3">PROPOSAL PLANE</text>
+      <text x="28" y="86" fill="#f4f0e8" font-size="26">candidate/**</text>
+      <path d="M28 118h214" stroke="#344238"/>
+      <text x="28" y="154" fill="#b7c0ba" font-size="17">agent.py</text>
+      <text x="28" y="187" fill="#b7c0ba" font-size="17">graph.yaml</text>
+      <text x="28" y="220" fill="#b7c0ba" font-size="17">prompts/**</text>
+      <circle cx="232" cy="232" r="11" fill="#c8f04b" filter="url(#glow)"/>
+    </g>
+    <g transform="translate(446 166)">
+      <rect width="510" height="320" rx="24" fill="#111817" stroke="#5ed2ff" stroke-width="2"/>
+      <text x="30" y="42" fill="#5ed2ff" font-size="15" letter-spacing="3">HARNESS / CHILD PROCESS</text>
+      <g transform="translate(30 82)">
+        <rect width="126" height="62" rx="12" fill="#172326" stroke="#5ed2ff"/>
+        <text x="63" y="28" text-anchor="middle" fill="#f4f0e8" font-size="14">fixed input</text>
+        <text x="63" y="47" text-anchor="middle" fill="#7f8d84" font-size="12">TaskInput only</text>
+        <path d="M126 31h48" stroke="#5ed2ff" stroke-width="2"/>
+        <rect x="174" width="126" height="62" rx="12" fill="#172326" stroke="#5ed2ff"/>
+        <text x="237" y="28" text-anchor="middle" fill="#f4f0e8" font-size="14">candidate DAG</text>
+        <text x="237" y="47" text-anchor="middle" fill="#7f8d84" font-size="12">fixed budgets</text>
+        <path d="M300 31h48" stroke="#5ed2ff" stroke-width="2"/>
+        <rect x="348" width="102" height="62" rx="12" fill="#172326" stroke="#5ed2ff"/>
+        <text x="399" y="28" text-anchor="middle" fill="#f4f0e8" font-size="14">artifacts</text>
+        <text x="399" y="47" text-anchor="middle" fill="#7f8d84" font-size="12">4 files/run</text>
+      </g>
+      <g transform="translate(30 180)">
+        <rect width="420" height="96" rx="16" fill="#1d1a13" stroke="#f58a3b"/>
+        <text x="22" y="31" fill="#f58a3b" font-size="14" letter-spacing="2">FORCED GATES</text>
+        <text x="22" y="59" fill="#e5ddd2" font-size="14">schema · grounding · evidence · privacy</text>
+        <text x="22" y="81" fill="#e5ddd2" font-size="14">injection · publication · integrity</text>
+      </g>
+    </g>
+    <g transform="translate(1068 190)">
+      <rect width="308" height="126" rx="20" fill="#182017" stroke="#c8f04b" stroke-width="2"/>
+      <text x="26" y="38" fill="#c8f04b" font-size="15" letter-spacing="3">KEEP</text>
+      <text x="26" y="75" fill="#f4f0e8" font-size="21">research/&lt;tag&gt;</text>
+      <text x="26" y="101" fill="#8e9a92" font-size="13">safe + statistically better</text>
+      <rect y="164" width="308" height="126" rx="20" fill="#1d1713" stroke="#f58a3b" stroke-width="2"/>
+      <text x="26" y="202" fill="#f58a3b" font-size="15" letter-spacing="3">DISCARD / CRASH</text>
+      <text x="26" y="239" fill="#f4f0e8" font-size="21">results.jsonl</text>
+      <text x="26" y="265" fill="#8e9a92" font-size="13">failure retained as evidence</text>
+    </g>
+    <path d="M334 325H446" stroke="#c8f04b" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M956 276h112" stroke="#c8f04b" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M956 404h72q40 0 40 38v0" fill="none" stroke="#f58a3b" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(64 558)">
+      <rect width="1312" height="98" rx="16" fill="#121613" stroke="#394039"/>
+      <path d="M28 49h48" stroke="#f58a3b" stroke-width="8" stroke-linecap="round"/>
+      <text x="100" y="39" fill="#f58a3b" font-size="14" letter-spacing="3">SIDE-EFFECT PLANE</text>
+      <text x="100" y="68" fill="#c5cbc7" font-size="17">database write · notifications · external publish</text>
+      <rect x="1054" y="22" width="226" height="54" rx="27" fill="#202521" stroke="#5c675f"/>
+      <text x="1167" y="55" text-anchor="middle" fill="#f4f0e8" font-size="16">LOCKED BY DEFAULT</text>
+    </g>
+  </g>
+</svg>
+

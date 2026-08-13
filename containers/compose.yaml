@@ -1,0 +1,18 @@
+services:
+  harness:
+    build:
+      context: ..
+      dockerfile: containers/Dockerfile
+    network_mode: none
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid
+    volumes:
+      - ../artifacts:/artifacts
+    mem_limit: 768m
+    cpus: 1.0
+

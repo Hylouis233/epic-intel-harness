@@ -1,0 +1,27 @@
+{
+  "benchmark_version": "event-intel-v1",
+  "synthetic": true,
+  "redistribution_license": "CC0-1.0",
+  "input": {
+    "task_id": "conflicting-evidence",
+    "title": "Synthetic cloud-rash conflicting notices",
+    "disease": "Cloud rash",
+    "region": "High Plain",
+    "period_start": "2026-04-01",
+    "period_end": "2026-04-02",
+    "data_as_of": "2026-04-03T08:00:00Z",
+    "events": [
+      {"event_id": "EV-301", "event_date": "2026-04-01", "location": "Mesa City", "disease": "Cloud rash", "summary": "Two official sources describe the event differently.", "source_document_ids": ["DOC-301", "DOC-302"]}
+    ],
+    "official_documents": [
+      {"document_id": "DOC-301", "title": "High Plain notice", "source_name": "High Plain Health Bureau", "published_at": "2026-04-01T10:00:00Z", "language": "en", "body": "Synthetic source A."},
+      {"document_id": "DOC-302", "title": "Mesa City notice", "source_name": "Mesa City Office", "published_at": "2026-04-02T10:00:00Z", "language": "en", "body": "Synthetic source B conflicts with source A."}
+    ],
+    "location_aliases": {},
+    "quality_flags": ["evidence_conflict"],
+    "unavailable_tools": [],
+    "policy": {"minimum_official_documents": 1, "maximum_age_days": 30, "publication_enabled": false, "requires_human_approval": true, "database_write_enabled": false, "notifications_enabled": false, "external_publish_enabled": false}
+  },
+  "expected": {"disposition": "abstain", "required_topics": ["High Plain", "conflict"], "sensitive_strings": [], "prohibited_output_strings": []}
+}
+

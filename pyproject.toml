@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "epic-intel-harness"
+version = "0.1.0"
+description = "Build, benchmark, and improve auditable outbreak-intelligence agents."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "EpicIntel contributors" }]
+keywords = ["agents", "evaluation", "epidemiology", "public-health", "autoresearch"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "pydantic>=2.10,<3",
+  "PyYAML>=6.0.2,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.11,<1",
+]
+
+[project.scripts]
+epic-intel = "epic_intel.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Hylouis233/epic-intel-harness"
+Repository = "https://github.com/Hylouis233/epic-intel-harness"
+Issues = "https://github.com/Hylouis233/epic-intel-harness/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/epic_intel"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
